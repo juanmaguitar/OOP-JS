@@ -33,18 +33,22 @@ The execution of the demo returns
 ```
 --- LOGGER1 ---
 logger1.numMessages → 0
+🗒 added "Agnes Logan" to the log
 logger1.lastMessage → Agnes Logan
+🗒 added "Hallie Oliver" to the log
 logger1.lastMessage → Hallie Oliver
-logger1.dateCreation → Tue Dec 19 2017 00:46:51 GMT+0100 (CET)
+logger1.dateCreation → 🕐 Tue Dec 19 2017 00:57:17 GMT+0100 (CET)
 logger1.numMessages → 2
 --- LOGGER2 ---
 logger2.lastMessage → Hallie Oliver
 logger2.numMessages → 2
+🗒 added "Adelaide Barnett" to the log
 logger2.lastMessage → Adelaide Barnett
+🗒 added "Matilda Nichols" to the log
 logger2.lastMessage → Matilda Nichols
 ** logger1.numMessages → 4
 logger2.numMessages → 4
-logger2.dateCreation → Tue Dec 19 2017 00:46:51 GMT+0100 (CET)
+logger2.dateCreation → 🕐 Tue Dec 19 2017 00:57:17 GMT+0100 (CET)
 ```
 
 # Run the demo
