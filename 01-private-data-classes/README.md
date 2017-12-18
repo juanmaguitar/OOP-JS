@@ -1,6 +1,6 @@
 # Privata Data in ES2015 Classes
 
-This example demonstrate how can we use `WeakMap` to create a set of private objects indexed by every instance
+This example demonstrate how can we use [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) to create a set of private objects indexed by every instance
 
 With this pattern we can have _private data_ per instance that cannot be accesed from the outside, but can be accesed from the prototype methods
 
