@@ -4,6 +4,8 @@ This example demonstrate a practical example of using the _Singleton_ pattern
 
 Although it seems [there are only a few acceptable cases](https://stackoverflow.com/questions/228164/on-design-patterns-when-to-use-the-singleton) for using a Singleton pattern, a _Logging Manager_ can be one of them
 
+Note: Unless you need to initialize the object at a delayed time after is loaded and with some data that will be obtained "in the future" (class implementation of singleton) in most of the cases a single literal object is enough for singleton pattern
+
 **`LogManager.js`**
 ```
 let _instance, _dateCreation
@@ -26,7 +28,7 @@ class LogManager {
 module.exports = LogManager
 ```
 
-With this implementation of the class we assure that every instance of it point to the same object
+With this implementation of the class we assure that every instance of it, point to the same object
 
 The execution of the demo returns 
 
