@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" id="myForm">
+    <input type="text" id="userName">
+    <button type="submit">Get Latest Gist of this user</button>
+  </form>
+  <a target="_blank" href="" id="latestGistLink"></a>
+  <script src="httpGet.js"></script>
+  <script>
+
+    const myDataGenerator = dataGenerator();  
+    const myForm = document.getElementById('myForm'); 
+    const userNameInput = document.getElementById('userName'); 
+    const latestGistLink = document.getElementById('latestGistLink')
+
+    function request(url) {
+      httpGet(url, function(response) {
+        myDataGenerator.next(response);
+      });
+    }
+    
+    function *dataGenerator() {
+      const urlUserGithub = 'https://api.github.com/users/' + userNameInput.value
+      const { gists_url } = yield request(urlUserGithub);
+      const urlUserGists = gists_url.replace(/\{.*\}/,'')
+      var [ { html_url: lastGistUrl } ] = yield request(urlUserGists);
+      latestGistLink.innerHTML = latestGistLink.href = lastGistUrl
+    }
+
+    myForm.addEventListener('submit', function(e) {
+      e.preventDefault()
+      myDataGenerator.next();
+    })
+
+  </script>
+</body>
+</html>

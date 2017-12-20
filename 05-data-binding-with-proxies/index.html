@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input id="txtName" type="text">
+  </form>
+  <script src="classes/Binder.js"></script>
+  <script src="classes/Person.js"></script>
+  <script>
+
+    const person = new Person('John', 'Smith')
+    let txtName = document.getElementById('txtName')
+    const binder = new Binder()
+
+    const proxiedPerson = binder.bindTo(person, 'name', txtName, 'value')
+    
+    setTimeout( function() {      
+      proxiedPerson.name = 'Mario'
+    }, 3000)
+
+  </script>
+</body>
+</html>
