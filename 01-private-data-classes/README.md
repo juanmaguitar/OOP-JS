@@ -8,7 +8,7 @@ The use of `WeakMap` will provoke the removal of the element in the list if the 
 
 Note also the convenience of using very similar methods `_(this).` &  `this.` to access either private or public data
 
-```
+```javascript
 'use strict'
 const priv = new WeakMap();
 const _ = instance => priv.get(instance)

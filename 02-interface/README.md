@@ -5,7 +5,7 @@ This example demonstrate how can we implement an `interface` to check if the obj
 Once we have our `Interface` class created we can create interfaces that can be used to check if the objects follow that interface (if not, an error will be thrown)
 
 **`SoftwareCompany.js`**
-```
+```javascript
 const Interface = require('./Interface')
 const IHireable = new Interface("IHireable", ["writeCode"], ["name", "language"])
 
@@ -27,7 +27,7 @@ The `SoftwareCompany` class requires objects (representing potential employees) 
 If an Object that doesn't have any of these things is passed, an error will be thrown
 
 **`index.js`**
-```
+```javascript
 const SoftwareHouse = require('./classes/SoftwareCompany')
 
 const startup = new SoftwareHouse()
@@ -62,7 +62,7 @@ catch(e) { console.log(e.message) }
 
 The provided example (`index.js`) shows in the console...
 
-```
+```bash
 juanma who says "I code javascript" hired!
 The object does not implement the interface IHireable. Property language not found.
 The object does not implement the interface IHireable. Method writeCode not found.

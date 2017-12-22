@@ -1,10 +1,10 @@
 # Asynchronous handling with generators
 
-This example demonstrate a the use of [_Generators_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) for handling asynchronous operations such as AJAX requests
+This example demonstrate the use of [_Generators_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) for handling asynchronous operations such as AJAX requests
 
 Our `dataGenerator` will return a _generator_ that will do several operations stopping and reactivating itself (in every `yield`) once we have a response from the ajax request
 
-```
+```javascript
  function request(url) {
   httpGet(url, function(response) {
     myDataGenerator.next(response);

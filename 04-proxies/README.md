@@ -4,7 +4,7 @@ This example demonstrate a the use of [_Proxy_](https://developer.mozilla.org/en
 
 By attaching a _handler_ to the proxy we can intercept (hook, trap) any interaction with the data and do more things
 
-```
+```javascript
 const handler = {
   get(target, propertyName) {
     console.log(`🗒 Getting property "${propertyName}"`)

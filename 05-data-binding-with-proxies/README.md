@@ -4,7 +4,7 @@ This example demonstrate how to use [_Proxy_](https://developer.mozilla.org/en-U
 
 With the class `Binder` we can use the method `bindTo` to get a proxied object that will bind values of properties in different objects
 
-```
+```javascript
 class Binder {
   bindTo( dataSourceObj, dataSourceProperty, dataTargetObj, dataTargetProperty) {
     let bindHandler = {

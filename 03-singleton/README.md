@@ -7,7 +7,7 @@ Although it seems [there are only a few acceptable cases](https://stackoverflow.
 Note: Unless you need to initialize the object at a delayed time after is loaded and with some data that will be obtained "in the future" (class implementation of singleton) in most of the cases a single literal object is enough for singleton pattern
 
 **`LogManager.js`**
-```
+```javascript
 let _instance, _dateCreation
 
 class LogManager {
@@ -32,7 +32,7 @@ With this implementation of the class we assure that every instance of it, point
 
 The execution of the demo returns 
 
-```
+```bash
 --- LOGGER1 ---
 logger1.numMessages → 0
 🗒 added "Agnes Logan" to the log
