@@ -20,6 +20,17 @@ class Binder {
 }
 ```
 
+```javascript
+const person = new Person('John', 'Smith')
+let txtName = document.getElementById('txtName')
+const binder = new Binder()
+const proxiedPerson = binder.bindTo(person, 'name', txtName, 'value')
+
+proxiedPerson.name = 'Connor Dawson'
+proxiedPerson.name = 'Alex Bryan'
+proxiedPerson.name = 'Lilly Payne'
+```
+
 # Run the demo
 
 To run the demo just load `index.html` in the browser. After 3s the value of the input will be updated as a consequence of updating `proxiedPerson.name = 'Mario'`
