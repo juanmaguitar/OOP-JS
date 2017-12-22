@@ -32,7 +32,7 @@ Meeting these requirements is what usually allows us to classify a language as O
 
 #### Association
 
-The object’s capability to refer another independent object
+> The object’s capability to refer another independent object
 
 ```javascript
 const elvisPresley = {
@@ -52,7 +52,7 @@ elvisPresley.manager = tomParker; //Association
 
 #### Aggregation
 
-The object’s capability to embed one or more independent objects
+> The object’s capability to embed one or more independent objects
 
 ```javascript
 const revolver = {
@@ -73,7 +73,7 @@ const theBeatles = {
 
 #### Composition
 
-This is the object’s capability to embed one or more dependent objects
+> This is the object’s capability to embed one or more dependent objects
 
 ```javascript
 
@@ -284,7 +284,7 @@ writeFullName(jimi) //→ jimi hendrix
 
 ## Javascript OOP vs Classical OOP
 
-### Classical Object-Oriented Programming
+### Classical Object-Oriented Programming
 
 **Classical Object-Oriented Programming** has two types of abstractions → Classes and Objects
 
@@ -292,7 +292,7 @@ An _object_ is an abstraction of a real-world entity while a _class_ is an abstr
 
 Object in classical OOP languages can only be created by instantiating classes
 
-### Javascript
+### Javascript
 
 **Javascript** has jut one type of abstraction → the Objects
 
