@@ -79,7 +79,7 @@ So if, for example, we would want to use the library [`request`](https://www.npm
 
 ## After
 
-So, in order to apply the Single Responsibility Principle, the task of sending the order cam be assigned to another component...
+So, in order to apply the Single Responsibility Principle, the task of sending the order can be assigned to another component...
 
 **`after/classes/OrderSender.js`**
 ```javascript
@@ -170,7 +170,7 @@ module.exports = OrderSender
 
 We can also add to the `Order` class the responsibility of assigning a different id to every order
 
-**`before/classes/Order.js`**
+**`_after2/classes/Order.js`**
 ```javascript
 class Order {
   constructor() {
