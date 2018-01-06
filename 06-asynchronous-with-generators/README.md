@@ -24,6 +24,44 @@ const myDataGenerator = dataGenerator();
 myDataGenerator.next();
 ```
 
+Another option to run generators is using a function that will manage the calls to the `next` methods of the iterators once we have values _yielded_
+
+There are some libraries that do this, for example the [`co`](https://github.com/tj/co) library
+
+[Example](https://jsfiddle.net/juanma/k2t8youa/) 
+
+```javascript
+function getAsyncRandomNumber( secondsDelay, cb ) {
+  setTimeout( () => {
+    const random = Math.floor( Math.random()*10 )	    	
+    cb(random)
+  }, secondsDelay*1000)
+}
+
+function getRandomNumber( secondsDelay ) {
+  return new Promise( resolve => getAsyncRandomNumber(secondsDelay, resolve) ) 
+}
+
+const INITIAL_DELAY = 3
+
+co( function *() {
+    const randomNumber1 = yield getRandomNumber(INITIAL_DELAY)
+    console.log(`After ${INITIAL_DELAY}s we got number ${randomNumber1}`)
+    const randomNumber2 = yield getRandomNumber(randomNumber1)
+    console.log(`After ${randomNumber1}s we got number ${randomNumber2}`)
+    const randomNumber3 = yield getRandomNumber(randomNumber2)
+    console.log(`[LAST] After ${randomNumber2}s we got number ${randomNumber3}`)
+})
+```
+
+
 # Run the demo
 
-To run the demo just load `index.html` in the browser. You can try different usernames of github that have gists avaliable (for example → `juanmaguitar`)
+## Example1
+To run the demo just load `example1/index.html` in the browser. 
+You can try different usernames of github that have gists avaliable (for example → `juanmaguitar`)
+
+## Example2
+
+To run the demo just load `example2/index.html` in the browser. 
+You'll see several executions of async operations in order

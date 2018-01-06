@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <pre id="myLog"></pre>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/co/4.1.0/index.js"></script>
+  <script src="logIntoHtml.js"></script>
+  <script>
+
+    function getAsyncRandomNumber( secondsDelay, cb ) {
+      setTimeout( () => {
+        const random = Math.floor( Math.random()*10 )	    	
+        cb(random)
+      }, secondsDelay*1000)
+    }
+
+    function getRandomNumber( secondsDelay ) {
+      return new Promise( resolve => getAsyncRandomNumber(secondsDelay, resolve) ) 
+    }
+
+    const INITIAL_DELAY = 3
+
+    co( function *() {
+        logTimer(INITIAL_DELAY)
+        const randomNumber1 = yield getRandomNumber(INITIAL_DELAY)
+        log(`After ${INITIAL_DELAY}s we got number ${randomNumber1}`)
+        logTimer(randomNumber1)
+        const randomNumber2 = yield getRandomNumber(randomNumber1)
+        log(`After ${randomNumber1}s we got number ${randomNumber2}`)
+        logTimer(randomNumber2)
+        const randomNumber3 = yield getRandomNumber(randomNumber2)
+        log(`[LAST] After ${randomNumber2}s we got number ${randomNumber3}`)
+    })
+
+  </script>
+</body>
+</html>

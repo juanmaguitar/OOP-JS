@@ -1,0 +1,20 @@
+{
+  "name": "08-SOLID-Single-Responsibility",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api-server": "json-server --watch db.json",
+    "before": "node before/index",
+    "after": "node after/index",
+    "after2": "node _after2/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.12.1",
+    "request": "^2.83.0",
+    "uuid": "^3.1.0"
+  }
+}
